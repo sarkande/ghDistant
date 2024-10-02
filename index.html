@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello World</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    #hello-world-window {
+      width: 200px;
+      height: 200px;
+      background-color: white;
+      border: 2px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    #hello-world-label {
+      text-align: center;
+      background-color: yellow;
+      padding: 10px;
+    }
+    #close-button {
+      margin-top: 10px;
+      padding: 5px 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="hello-world-window">
+    <div id="hello-world-label"></div>
+    <button id="close-button">Fermer</button>
+  </div>
+
+  <!-- Inclusion du fichier contenant les constantes -->
+  <script src="constantes.js"></script>
+
+  <script>
+    // Configuration de la fenêtre
+    document.title = HELLO_WORLD_TITLE;
+
+    // Création du label
+    const label = document.getElementById("hello-world-label");
+    label.textContent = HELLO_WORLD_TEXT;
+    label.style.backgroundColor = "yellow";
+
+    // Gestion du bouton fermer
+    const closeButton = document.getElementById("close-button");
+    closeButton.addEventListener("click", () => {
+      window.close();
+    });
+
+    // Affichage de la fenêtre (simulée ici dans l'interface HTML)
+    window.onload = () => {
+      alert(HELLO_WORLD_TEXT);
+    };
+  </script>
+
+</body>
+</html>
